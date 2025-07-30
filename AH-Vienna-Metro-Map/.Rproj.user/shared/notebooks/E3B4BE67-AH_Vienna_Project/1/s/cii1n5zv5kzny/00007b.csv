@@ -1,0 +1,17 @@
+"0",""
+"0","#This helps to turn the ""geometry"" column of the Excel file immediately above from a character column into a a geometry linestring column. "
+"0","Vienna_Subway_Lines_Revised <- sf::st_as_sf(Vienna_Subway_Lines, wkt = ""geometry"")"
+"0","Vienna_Subway_Lines_Revised"
+"1","Simple feature collection with 208 features and 4 fields"
+"1","
+"
+"1","Geometry type: LINESTRING
+"
+"1","Dimension:     XY
+"
+"1","Bounding box:  "
+"1","xmin: 16.26086 ymin: 48.1305 xmax: 16.5084 ymax: 48.27758"
+"1","
+"
+"1","CRS:           NA
+"

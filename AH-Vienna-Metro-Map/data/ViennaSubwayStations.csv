@@ -1,0 +1,99 @@
+﻿Station_Name,Lines,Station_Line ,Station_Color,geometry,City_State_English,City_State_German
+Karlsplatz,"U1,U2,U4",Intersection,white,POINT(16.36966 48.20039),Vienna,Wien
+Laengenfeldgasse,"U4,U6",Intersection,white,POINT(16.33505 48.18492),Vienna,Wien
+Landstrasse,"U3,U4",Intersection,white,POINT(16.38568 48.20577),Vienna,Wien
+Praterstern,"U1,U2",Intersection,white,POINT(16.39211 48.21912),Vienna,Wien
+Schottenring,"U2,U4",Intersection,white,POINT(16.37197 48.21655),Vienna,Wien
+Schwedenplatz,"U1,U4",Intersection,white,POINT(16.37765 48.21179),Vienna,Wien
+Spittelau,"U4,U6",Intersection,white,POINT(16.35808 48.23559),Vienna,Wien
+Stephansplatz,"U1,U3",Intersection,white,POINT(16.37152 48.20808),Vienna,Wien
+Volkstheater,"U2,U3",Intersection,white,POINT(16.35786 48.20528),Vienna,Wien
+Westbahnhof,"U3,U6",Intersection,white,"POINT(16.3379216	 48.1958784)",Vienna,Wien
+Oberlaa,U1,U1,red,POINT(16.39984 48.13771),Vienna,Wien
+Neulaa,U1,U1,red,POINT(16.38561 48.14577),Vienna,Wien
+Alaudagasse,U1,U1,red,POINT(16.38236 48.1537),Vienna,Wien
+Altes Landgut,U1,U1,red,POINT(16.38323 48.16229),Vienna,Wien
+Troststrasse,U1,U1,red,POINT(16.38027 48.16902),Vienna,Wien
+Reumannplatz,U1,U1,red,POINT(16.37788958 48.17501508),Vienna,Wien
+Keplerplatz,U1,U1,red,POINT(16.37619975 48.17919256),Vienna,Wien
+Suedtiroler Platz - Hauptbahnhof,U1,U1,red,POINT(16.37366139 48.18663655),Vienna,Wien
+Taubstummengasse,U1,U1,red,POINT(16.37032861 48.19390572),Vienna,Wien
+Nestroyplatz,U1,U1,red,POINT(16.38553525 48.21530985),Vienna,Wien
+Vorgartenstrasse,U1,U1,red,POINT(16.40107902 48.22365655),Vienna,Wien
+Donauinsel,U1,U1,red,POINT(16.41141506 48.22921775),Vienna,Wien
+Kaisermuehlen/VIC,U1,U1,red,"POINT(16.4164825	 48.23285364)",Vienna,Wien
+Alte Donau,U1,U1,red,POINT(16.42473449 48.23285364),Vienna,Wien
+Kagran,U1,U1,red,POINT(16.43298779 48.24303963),Vienna,Wien
+Kagraner Platz,U1,U1,red,POINT(16.44351295 48.25053356),Vienna,Wien
+Rennbahnweg,U1,U1,red,POINT(16.44969836 48.25767922),Vienna,Wien
+Aderklaaer strasse,U1,U1,red,POINT(16.45162403 48.26345912),Vienna,Wien
+Grossfeldsiedlung,U1,U1,red,POINT(16.44793874 48.27092192),Vienna,Wien
+Leopoldau,U1,U1,red,POINT(16.45248168 48.27757827),Vienna,Wien
+Museumsquartier,U2,U2,purple,"POINT(16.3612646	 48.2026513)",Vienna,Wien
+Rathaus,U2,U2,purple,POINT(16.35546415 48.2104253),Vienna,Wien
+Schottentor,U2,U2,purple,"POINT(16.3629203	 48.21504635)",Vienna,Wien
+Taborstrasse,U2,U2,purple,POINT(16.38155 48.21926),Vienna,Wien
+Messe-Prater,U2,U2,purple,POINT(16.40493 48.21778),Vienna,Wien
+Krieau,U2,U2,purple,POINT(16.41375 48.21469),Vienna,Wien
+Stadion,U2,U2,purple,POINT(16.42049 48.2105),Vienna,Wien
+Donaumarina,U2,U2,purple,POINT(16.43157 48.20645),Vienna,Wien
+Donaustadtbruecke,U2,U2,purple,POINT(16.44017 48.2118),Vienna,Wien
+Stadlau,U2,U2,purple,POINT(16.44956 48.21977),Vienna,Wien
+Hardeggasse,U2,U2,purple,POINT(16.45781 48.22089),Vienna,Wien
+Donauspital,U2,U2,purple,POINT(16.46664 48.21943),Vienna,Wien
+Aspernstrasse,U2,U2,purple,POINT(16.47494 48.22259),Vienna,Wien
+Hausfeldstrasse,U2,U2,purple,POINT(16.48562 48.23341),Vienna,Wien
+Aspern Nord,U2,U2,purple,POINT(16.50449 48.2345),Vienna,Wien
+Seestadt,U2,U2,purple,POINT(16.5084 48.22623),Vienna,Wien
+Ottakring,U3,U3,orange,"POINT(16.3113581	 48.2110316)",Vienna,Wien
+Kendlerstrasse,U3,U3,orange,"POINT(16.3091274	 48.2045669)",Vienna,Wien
+Huetteldorfer strasse,U3,U3,orange,POINT(16.31144495 48.19979335),Vienna,Wien
+Johnstrasse,U3,U3,orange,POINT(16.32013985 48.19762865),Vienna,Wien
+Schweglerstrasse,U3,U3,orange,POINT(16.32861215 48.197698),Vienna,Wien
+Zieglergasse,U3,U3,orange,"POINT(16.3463001 	48.1971162)",Vienna,Wien
+Neubaugasse,U3,U3,orange,"POINT(16.3525323	 48.19921145)",Vienna,Wien
+Herrengasse,U3,U3,orange,"POINT(16.3651017	 48.20932045)",Vienna,Wien
+Stubentor,U3,U3,orange,POINT(16.3792103 48.2069326),Vienna,Wien
+Rochusgasse,U3,U3,orange,POINT(16.39226025 48.2020952),Vienna,Wien
+Kardinal-Nagl-Platz,U3,U3,orange,POINT(16.39987005 48.19757975),Vienna,Wien
+Schlachthausgasse,U3,U3,orange,POINT(16.406735 48.1944175),Vienna,Wien
+Erdberg,U3,U3,orange,"POINT(16.4141303	 48.1914411)",Vienna,Wien
+Gasometer,U3,U3,orange,POINT(16.41746355 48.1851451),Vienna,Wien
+Zippererstrasse,U3,U3,orange,"POINT(16.4119363	 48.18025715)",Vienna,Wien
+Enkplatz,U3,U3,orange,POINT(16.414747 48.1747308),Vienna,Wien
+Simmering,U3,U3,orange,POINT(16.420532 48.169778),Vienna,Wien
+Huetteldorf,U4,U4,green,POINT(16.26086265 48.19696365),Vienna,Wien
+Ober St. Veit,U4,U4,green,POINT(16.27616015 48.19223595),Vienna,Wien
+Unter St. Veit,U4,U4,green,POINT(16.28635235 48.1910693),Vienna,Wien
+Braunschweiggasse,U4,U4,green,"POINT(16.2957977	 48.1894062)",Vienna,Wien
+Hietzing,U4,U4,green,POINT(16.30455905 48.18757935),Vienna,Wien
+Schoenbrunn,U4,U4,green,POINT(16.31903575 48.18602115),Vienna,Wien
+Meidling Haupstrasse,U4,U4,green,"POINT(16.3281117	 48.18363345)",Vienna,Wien
+Margaretenguertel,U4,U4,green,POINT(16.34301135 48.1884871),Vienna,Wien
+Pilgramgasse,U4,U4,green,"POINT(16.3543005	 48.1921542)",Vienna,Wien
+Kettenbrueckengasse,U4,U4,green,POINT(16.35809 48.19663),Vienna,Wien
+Stadtpark,U4,U4,green,POINT(16.37982 48.20295),Vienna,Wien
+Rossauer Laende,U4,U4,green,POINT(16.36757 48.22234),Vienna,Wien
+Friedensbruecke,U4,U4,green,POINT(16.36412 48.22771),Vienna,Wien
+Heiligenstradt,U4,U4,green,POINT(16.36593 48.24867),Vienna,Wien
+Siebenhirten,U6 ,U6 ,brown,POINT(16.30983385 48.1305024),Vienna,Wien
+Perfektastrasse,U6 ,U6 ,brown,POINT(16.3132477 48.13661785),Vienna,Wien
+Erlaaer strasse,U6,U6,brown,POINT(16.31652385 48.1419866),Vienna,Wien
+Alterlaa,U6,U6,brown,"POINT(16.3168423	 48.15050475)",Vienna,Wien
+Am Schoepfwerk,U6,U6,brown,POINT(16.32420305 48.1606789),Vienna,Wien
+Tschwerttegasse,U6,U6,brown,POINT(16.3277971 48.1649822),Vienna,Wien
+Bahnhof Meidling,U6,U6,brown,POINT(16.3314141 48.1735323),Vienna,Wien
+Niederhofstrasse,U6,U6,brown,POINT(16.331141 48.180756),Vienna,Wien
+Gumpendorfer strasse,U6,U6,brown,POINT(16.33754335 48.19073325),Vienna,Wien
+Burggasse-Stadthalle,U6,U6,brown,POINT(16.3372308 48.20297265),Vienna,Wien
+Thaliastrasse,U6,U6,brown,POINT(16.33798 48.20774),Vienna,Wien
+Josefstaedter strasse,U6,U6,brown,POINT(16.33917 48.21158),Vienna,Wien
+Alser strasse,U6,U6,brown,POINT(16.34181 48.21677),Vienna,Wien
+Michelbeuern - AKH,U6,U6,brown,POINT(16.34417 48.22109),Vienna,Wien
+Waehringer strasse - Volksoper,U6,U6,brown,POINT(16.34951 48.22559),Vienna,Wien
+Nussdorfer strasse,U6,U6,brown,POINT(16.35247 48.23134),Vienna,Wien
+Jaegerstrasse,U6,U6,brown,POINT(16.36871 48.23522),Vienna,Wien
+Dresdner strasse,U6,U6,brown,POINT(16.38023 48.23731),Vienna,Wien
+Handelskai,U6,U6,brown,POINT(16.38542 48.24174),Vienna,Wien
+Neue Donau,U6,U6,brown,POINT(16.3947 48.2463),Vienna,Wien
+Floridsdorf,U6,U6,brown,POINT(16.40002 48.2564),Vienna,Wien

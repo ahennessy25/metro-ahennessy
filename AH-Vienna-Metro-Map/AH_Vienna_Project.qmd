@@ -1,0 +1,138 @@
+---
+title: "Vienna-Project"
+format: html
+editor: visual
+---
+
+```{r}
+#This is the first chunk of code to run.
+#| label: setup
+#| include: false
+options(styler.save_after_styling = TRUE)  
+```
+
+Libraries
+
+```{r}
+#These are the four libraries that we will be using. 
+library(tidyverse)
+library(sf)
+library(ggplot2)
+library(plotly)
+
+```
+
+Vienna Map
+
+```{r}
+#This is the initial shapefile map of the City-State of Vienna.
+Vienna_Map <- read_sf("data/ViennaPolygon.shp")
+Vienna_Map
+
+#This Excel file translates the name Wien on the shapefile to Vienna, as Wien is German for Vienna. 
+Vienna_Map_Translation <- read_csv("data/NameTranslation.csv")
+Vienna_Map_Translation
+
+#This merges the shapefile and the Excel file immediately above so that the name "Vienna" is included in the shapefile and not just the German name "Wien." 
+Vienna_Map_left <- left_join(Vienna_Map, Vienna_Map_Translation, by = c("NAME_LANDK" = "German_name"))
+Vienna_Map_left
+
+#This is a map showing the outer boundaries of the city-state of Vienna. 
+ggplot() +
+  geom_sf(data = Vienna_Map_left)
+```
+
+Vienna Subway Lines
+
+
+```{r}
+#This Excel file consists of all the line segments of the Vienna subway.
+Vienna_Subway_Lines <- read_csv("data/ViennaSubwayLines.csv")
+Vienna_Subway_Lines
+
+#This helps to turn the "geometry" column of the Excel file immediately above from a character column into a a geometry linestring column. 
+Vienna_Subway_Lines_Revised <- sf::st_as_sf(Vienna_Subway_Lines, wkt = "geometry")
+Vienna_Subway_Lines_Revised
+
+#This assigns the shapefile created above to the coordinate reference system (crs) to the number 4326 because when the crs value is equals to 4326, then the values of each observation in the dataset are put onto a latitude/longitude map.
+st_crs(Vienna_Subway_Lines_Revised) <- 4326
+
+#This reveals a latitude/longitude map of the lines. They are each color coded by the color each of these lines are assigned to in real life. U1 is red, U2 is purple, U3 is orange, U4 is green and U6 is brown. 
+ggplot() +
+  geom_sf(data = Vienna_Subway_Lines_Revised, aes(color = Line_ID, group = Line_ID)) +
+  scale_color_manual(values = c(U1 = "red", U2 = "purple", U3 = "orange", U4 = "green", U6 = "brown")) +
+    coord_sf(xlim = c(16.18, 16.58), ylim = c(48.12, 48.32)) 
+```
+
+Vienna Subway Stations
+
+```{r}
+#The Excel file immediately below is a map of all 98 distinct Vienna subway stations. There are 10 stations that are located where subway lines intersect. You can see them on the first ten rows that are on display in the tibble results at the bottom of this chunk of code. 
+Vienna_Subway_Stations <- read_csv("data/ViennaSubwayStations.csv")
+Vienna_Subway_Stations
+
+#This converts the "geometry" column of the subway stations excel file immediately above from a character column into a a geometry point column. 
+Vienna_Subway_Stations_Rev <- sf::st_as_sf(Vienna_Subway_Stations, wkt = "geometry")
+Vienna_Subway_Stations_Rev
+
+#This assigns the shapefile produced immediately above the coordinate reference system (crs) to the value of 4326. It is assigned to the value 4326 because when the crs value equals 4326, the values of each of the stations in this dataset are put onto a latitude/longitude map.
+st_crs(Vienna_Subway_Stations_Rev) <- 4326
+
+#This reveals a latitude/longitude map of the stations. They are each color coded by the color each of these lines are assigned to in real life. U1 is red, U2 is purple, U3 is orange, U4 is green and U6 is brown. The stations where the subway lines intersect are color coded in white and are called "Intersection" subway stations.  
+ggplot() +
+  geom_sf(data = Vienna_Subway_Stations_Rev, aes(color = Station_Line)) +
+  scale_color_manual(values = c(Intersection = "white", U1 = "red", U2 = "purple", U3 = "orange", U4 = "green", U6 = "brown")) +
+  coord_sf(xlim = c(16.18, 16.58), ylim = c(48.12, 48.32)) 
+```
+
+First Combined Map
+
+```{r}
+#This chunk of code creates the first combined map. The order in which it is layered matters.
+ ggplot() +
+  ggtitle("Vienna U-Bahn Subway Metro Map") + #This makes the title
+  theme(plot.title = element_text(hjust = 0.55)) + #This is what helps centralize the title. I made a slight horizontal rightward tilt to improve the display of the map, as it helps make the title align more with the location of the northernmost part of Vienna. rm
+  geom_sf(data = Vienna_Map_left) + #This is the first layer. The one that is in the very back. This belongs in the very back because any layer that is further back than the shapefile of the city-state of Vienna would completely block the viewing of any layers with data including latitude and longitude coordinates within Vienna. And we would not want any of the other layers in this code to be completely invisible. 
+  geom_sf(data = Vienna_Subway_Lines_Revised, aes(color = Line_ID, group = Line_ID)) + #This is the second layer. The one that is in the middle. This belongs in the middle because if it were in the front, then multiple line colors, none of which are white, would obscure the intersecting stations that are colored in white. 
+  geom_sf(data = Vienna_Subway_Stations_Rev, aes(color = Station_Line)) + #This is the third layer. The one that is in the very front. Placing this layer in the front is why we are able to get a clear view of the intersecting stations colored in white. 
+  
+  #The first part of the code immediately below manually assigns the colors to each value of the column "Station_Line" in the third layer. The same column that is assigned to color in the third layer. The breaks immediately in the part of the code below that ensure that only lines and not the intersecting points appear on the legend. We don't want intersecting points to appear on the legend because we only want the colors of the lines to appear on the legend and intersecting points are not lines. Intersecting points are stations.  
+  scale_color_manual(values = c(Intersection = "white", U1 = "red", U2 = "purple", U3 = "orange", U4 = "green", U6 = "brown"), breaks = c("U1", "U2", "U3", "U4", "U6")) + 
+  coord_sf(xlim = c(16.18, 16.58), ylim = c(48.12, 48.32)) #These are the coordinate limits regarding latitude and longitude. 
+
+
+```
+
+Final combined map where we can hover over each station.
+
+```{r}
+#This adds the ability for users to hover over of each of the stations on the combined map. I keep the title on the left because of icons that appear on the top right that would have otherwise obscured the view of the title if I centered it. 
+ggplotly(
+ ggplot() +
+ ggtitle("Vienna U-Bahn Subway Metro Map") +
+  geom_sf(data = Vienna_Map_left) + #This is the first layer and the one in the very back. 
+  geom_sf(data = Vienna_Subway_Lines_Revised, aes(color = Line_ID, group = Line_ID)) + #This is the second layer and it is in the middle. 
+  geom_sf(data = Vienna_Subway_Stations_Rev, color = Vienna_Subway_Stations_Rev$Station_Color, aes(group = Station_Name)) + #This is the third layer and it is in the front. The column assigned to the group value in the aes here, "Station_Name", is the data that will appear when you hover over an individual station. 
+  scale_color_manual(values = c("red","purple", "orange", "green", "brown")) #This manually assigns the five colors in this line of code to the values from the column in the second layer that is assigned to the color value in aes, "Line_ID." The "Line_ID" values are sorted in alphabetical and numerical order making U1 the first value and U6 the last value. To keep the colors the same as they were in previous lines of this code, this means that red is the first color (U1), purple is the second color (U2), orange is the third color (U3), green is the fourth color (U4) and brown is the fifth color (U6). It is these five values from "Line_ID" that appear in the legend on the right and they appear in their proper colors.  
+)
+
+```
+
+Sources:
+
+https://www.kaggle.com/datasets/citylines/city-lines/data
+
+https://www.kaggle.com/datasets/lenapiter/vienna-subway-network 
+
+Whichever stations were missing from the original "city-lines" dataset in Kaggle, I obtained the latitude and longitudinal values from Map Carta. I got the latitude and longitudinal coordinates for the intersecting subway stations from Map Carta as well. I took whatever station names were missing in the "city-lines" dataset from the "vienna-subway-network" dataset in Kaggle. 
+
+https://www.data.gv.at/katalog/dataset/86c29af5-c52c-423d-8764-82c1bb037936#resources
+
+I downloaded the SHP folder on the link immediately above. This downloads a folder with five files with different extensions (a .cst file, a .dbf file, a .prj file, a .shp file and a .shx file). All five files were initially names "LandesgrenzeogdPolygon." "Landesgrenzeogd" is German for "State border etc" and "Polygon" is an English word. I renamed the "Landesgrenzeogd" part of each of their names to "Vienna", meaning all the files were called "ViennaPolygon" since the polygon is a shapefile of the outer boundaries of the city-state of Vienna. I took all five files out of their initial folder and put them together into the "data" folder within my project zip file. 
+
+https://www.wienvienna.com/karlsplatz-metro-station-entrance-cars/
+
+The only thing missing from Kaggle in terms of station lines which is info you can find in the link immediately above is that the intersection that the "Karlsplatz" station is on does not just include lines U1 and U4. It's intersection also includes line U2 as well. 
+
+Note: In the original "city-lines" data there were two latitude and longitudinal points for some of the non-intersecting subway stations. I created a separate CSV file called "CalculatingCoordinates" that is not in this code but is in the "data" folder. This CSV file calculates the average of the two latitude and longitudinal coordinates assigned to each of the stations it lists. The final average results of the coordinates of the stations listed in this file go on to become the listed latitude and longitudinal coordinates for these stations in my "ViennaSubwayStations" and "ViennaSubwayLines" csv files. 
+

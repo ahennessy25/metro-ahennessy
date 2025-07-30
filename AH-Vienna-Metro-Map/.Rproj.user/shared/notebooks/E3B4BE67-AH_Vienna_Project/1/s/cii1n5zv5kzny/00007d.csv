@@ -1,0 +1,8 @@
+"0","#This assigns the shapefile created above to the coordinate reference system (crs) to the number 4326 because when the crs value is equals to 4326, then the values of each observation in the dataset are put onto a latitude/longitude map."
+"0","st_crs(Vienna_Subway_Lines_Revised) <- 4326"
+"0",""
+"0","#This reveals a latitude/longitude map of the lines. They are each color coded by the color each of these lines are assigned to in real life. U1 is red, U2 is purple, U3 is orange, U4 is green and U6 is brown. "
+"0","ggplot() +"
+"0","  geom_sf(data = Vienna_Subway_Lines_Revised, aes(color = Line_ID, group = Line_ID)) +"
+"0","  scale_color_manual(values = c(U1 = ""red"", U2 = ""purple"", U3 = ""orange"", U4 = ""green"", U6 = ""brown"")) +"
+"0","    coord_sf(xlim = c(16.18, 16.58), ylim = c(48.12, 48.32)) "

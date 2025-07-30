@@ -1,0 +1,16 @@
+"0","#This is the initial shapefile map of the City-State of Vienna."
+"0","Vienna_Map <- read_sf(""data/ViennaPolygon.shp"")"
+"0","Vienna_Map"
+"1","Simple feature collection with 1 feature and 12 fields"
+"1","
+"
+"1","Geometry type: POLYGON
+"
+"1","Dimension:     XY
+"
+"1","Bounding box:  "
+"1","xmin: 16.18182 ymin: 48.1179 xmax: 16.5775 ymax: 48.32266"
+"1","
+"
+"1","Geodetic CRS:  WGS 84
+"

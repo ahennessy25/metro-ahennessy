@@ -1,0 +1,8 @@
+"0","#This assigns the shapefile produced immediately above the coordinate reference system (crs) to the value of 4326. It is assigned to the value 4326 because when the crs value equals 4326, the values of each of the stations in this dataset are put onto a latitude/longitude map."
+"0","st_crs(Vienna_Subway_Stations_Rev) <- 4326"
+"0",""
+"0","#This reveals a latitude/longitude map of the stations. They are each color coded by the color each of these lines are assigned to in real life. U1 is red, U2 is purple, U3 is orange, U4 is green and U6 is brown. The stations where the subway lines intersect are color coded in white and are called ""Intersection"" subway stations.  "
+"0","ggplot() +"
+"0","  geom_sf(data = Vienna_Subway_Stations_Rev, aes(color = Station_Line)) +"
+"0","  scale_color_manual(values = c(Intersection = ""white"", U1 = ""red"", U2 = ""purple"", U3 = ""orange"", U4 = ""green"", U6 = ""brown"")) +"
+"0","  coord_sf(xlim = c(16.18, 16.58), ylim = c(48.12, 48.32)) "

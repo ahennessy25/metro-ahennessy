@@ -1,0 +1,4 @@
+"0","#This is the first chunk of code to run."
+"0","#| label: setup"
+"0","#| include: false"
+"0","options(styler.save_after_styling = TRUE)  "

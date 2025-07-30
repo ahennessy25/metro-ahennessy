@@ -1,0 +1,10 @@
+"0","#The Excel file immediately below is a map of all 98 distinct Vienna subway stations. There are 10 stations that are located where subway lines intersect. You can see them on the first ten rows that are on display in the tibble results at the bottom of this chunk of code. "
+"0","Vienna_Subway_Stations <- read_csv(""data/ViennaSubwayStations.csv"")"
+"2","[1mRows: [22m[34m98[39m [1mColumns: [22m[34m7[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m────────────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): Station_Name, Lines, Station_Line, Station_Color, geometry, City_State_English, City_St..."
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","Vienna_Subway_Stations"

@@ -1,0 +1,17 @@
+"0",""
+"0","#This converts the ""geometry"" column of the subway stations excel file immediately above from a character column into a a geometry point column. "
+"0","Vienna_Subway_Stations_Rev <- sf::st_as_sf(Vienna_Subway_Stations, wkt = ""geometry"")"
+"0","Vienna_Subway_Stations_Rev"
+"1","Simple feature collection with 98 features and 6 fields"
+"1","
+"
+"1","Geometry type: POINT
+"
+"1","Dimension:     XY
+"
+"1","Bounding box:  "
+"1","xmin: 16.26086 ymin: 48.1305 xmax: 16.5084 ymax: 48.27758"
+"1","
+"
+"1","CRS:           NA
+"
