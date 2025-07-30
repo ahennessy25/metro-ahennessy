@@ -1,0 +1,1 @@
+This project visualizes Vienna’s U-Bahn (subway) network using R and the Leaflet package. It provides an interactive map displaying all five subway lines and 27 stations, with tooltips that reveal station metadata when hovered over.
