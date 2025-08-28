@@ -1,4 +1,4 @@
-This project visualizes Vienna’s U-Bahn (subway) network using R and the Leaflet package. It provides an interactive map displaying all five subway lines and 27 stations, with tooltips that reveal station metadata when hovered over.
+This project visualizes Vienna’s U-Bahn (subway) network using R and the Plotly package. It provides an interactive map displaying all five subway lines and 27 stations, with tooltips that reveal station metadata when hovered over.
 
 # Features
 - Interactive Leaflet map rendered in R
@@ -22,7 +22,7 @@ metro-ahennessy/
 - R (>= 4.0)
 - RStudio (recommended)
 - Packages:
-  - `leaflet`
+  - `plotly`
   - `sf`
   - `tidyverse`
   - `dplyr`
